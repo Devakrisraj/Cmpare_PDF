@@ -1,0 +1,92 @@
+{% load static %} 
+<!DOCTYPE html>
+<!-- saved from url=(0071)file:///C:/Users/dkrishna/.spyder-py3/compare/templates/SM_Predict.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>
+body  {
+
+  background-color: #cccccc;
+}
+
+
+.button {
+  background-color: #0020C2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+
+.button5 {font-size: 24px;}
+</style>
+</head>
+<body style="background: url({% static 'images/sslake.png' %}) no-repeat; background-size: 100% 100%;">
+<img src="{% static 'images/sslogo.png' %}" style="width:250px;">
+<center>
+<h1> <a>PDF Comparison Tool</a> </h1>
+    <br>
+    <br>    
+  <!--form action="/PAREA/" method="post" enctype="multipart/form-data">
+    <label for="Prediction Area">Prediction Area:</label>
+    <select name="Prediction Area" id="Prediction Area">
+    <option value="NB">New Business</option>
+    <option value="PO">Payment Out</option>
+    </select>
+   <br/>
+   <br/>
+    <label for="Prediction Application">Prediction Application:</label>
+    <select name="Prediction Application" id="Prediction Application">
+    <option value="APOLLO">Annuity</option>
+    <option value="KLM">LIFE</option>  
+    <option value="ULP">ULP</option>
+    <option value="UYS">UYS</option>
+    </select-->
+   {% block content %}
+   <form action="/pdfcompare/" method="post" enctype="multipart/form-data">
+   {% csrf_token %}
+    <input type="file" name="file1" required>
+    <br>
+    <br>
+    <input type="file" name="file2" required>
+    <br>
+    <br>
+    <button type="submit">Upload file</button>
+    <!--input type="file" name="file2" required>
+    <button type="submit">Upload file</button-->
+   </form> 
+   <br>
+   {% if uploaded_file_url %}
+    <p>Comparison output placed in: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+   {% endif %}
+
+   {% endblock %}
+   <br>
+   </center>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</body></html>
